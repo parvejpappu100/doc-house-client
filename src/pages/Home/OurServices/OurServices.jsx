@@ -41,12 +41,12 @@ const OurServices = () => {
                     <p className='text-center pt-4 text-[12px] font-semibold'>Cosmetic Surgery</p>
                 </div>
             </div>
-            <div className='flex items-center gap-12'>
+            <div className='flex items-center gap-12 flex-col lg:flex-row'>
                 <div className='w-full'>
                     <img src={gastic} alt="" />
                 </div>
                 <div className='w-full'>
-                    <h3 className='text-3xl font-semibold'>Electro  Gastrology Therapy</h3>
+                    <h3 className='text-2xl lg:text-3xl font-semibold'>Electro  Gastrology Therapy</h3>
                     <p className='mt-5'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error </p>
                     <p className='my-4'>Sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                     <button className='bg-white text-[#F7A582]  font-semibold px-7 py-3 rounded-lg hover:bg-[#F7A582]  duration-500 border hover:text-white border-[#F7A582]'>More Details</button>
