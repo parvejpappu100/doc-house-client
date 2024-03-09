@@ -3,8 +3,29 @@ import logo from "../../assets/images/icons/Group 2.png";
 import vector from "../../assets/images/Vector.png"
 import { Link } from 'react-router-dom';
 import ActiveLink from '../../components/ActiveLink/ActiveLink';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
+import { FaCheck, FaLock, FaUserCircle } from "react-icons/fa";
+
 
 const Navbar = () => {
+
+    const { user, logOut } = useAuth();
+
+
+    const handleLogout = () => {
+        logOut()
+            .then(result => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Logout successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch()
+    }
 
     const navOptions = <>
 
@@ -15,9 +36,18 @@ const Navbar = () => {
         <li><a>Appointment</a></li>
         <li><a>Reviews</a></li>
         <li><a>Contact Us</a></li>
-        <li>
-            <ActiveLink to="/login">Login</ActiveLink>
-        </li>
+        {
+            user ? <li className='flex flex-row '>
+                <Link onClick={handleLogout}>Logout</Link>
+                <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                    {
+                        user.photoURL ? <img className="rounded-full h-10 w-10" src={user.photoURL}></img> : <FaUserCircle className="h-10 w-10"></FaUserCircle>
+                    }
+                </div>
+            </li> : <li>
+                <ActiveLink to="/login">Login</ActiveLink>
+            </li>
+        }
 
     </>
 

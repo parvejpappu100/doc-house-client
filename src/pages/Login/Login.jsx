@@ -3,9 +3,12 @@ import log from "../../assets/images/log.png";
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import useAuth from '../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
+    const { singIn, restPassword } = useAuth();
     const [logInError, setLogInError] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const navigate = useNavigate();

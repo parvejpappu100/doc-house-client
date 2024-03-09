@@ -3,7 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import SocialLogin from '../../components/SocialLogin/SocialLogin';
+import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import log from "../../assets/images/log.png";
 
 
@@ -159,13 +159,10 @@ const SingUp = () => {
                                     </div>
                                 </form>
                                 <p className="text-red-600 text-center mb-2 font-semibold">{singUpError}</p>
-                                <p className='text-center font-semibold'>Please register at first. Go to <Link to="/login" className='text-[#F7A582]'> SIGN UP!</Link></p>
+                                <p className='text-center font-semibold'>Already registered? Go to <Link to="/login" className='text-[#F7A582]'>SIGN IN!</Link></p>
                             </div>
                         </div>
                     </div>
-                    {/* <div>
-                        <SocialLogin></SocialLogin>
-                    </div> */}
                 </div>
             </div>
         </div>
