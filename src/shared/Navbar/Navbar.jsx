@@ -1,17 +1,23 @@
 import React from 'react';
 import logo from "../../assets/images/icons/Group 2.png";
 import vector from "../../assets/images/Vector.png"
+import { Link } from 'react-router-dom';
+import ActiveLink from '../../components/ActiveLink/ActiveLink';
 
 const Navbar = () => {
 
     const navOptions = <>
 
-        <li><a>Home</a></li>
+        <li>
+            <ActiveLink to="/">Home</ActiveLink>
+        </li>
         <li><a>About</a></li>
         <li><a>Appointment</a></li>
         <li><a>Reviews</a></li>
         <li><a>Contact Us</a></li>
-        <li><a>Login</a></li>
+        <li>
+            <ActiveLink to="/login">Login</ActiveLink>
+        </li>
 
     </>
 

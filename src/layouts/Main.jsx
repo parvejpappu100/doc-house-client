@@ -1,14 +1,20 @@
 import React from 'react';
 import Navbar from '../shared/Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
 import Footer from '../shared/Footer/Footer';
 
 const Main = () => {
+
+    const location = useLocation();
+
+    const noHeaderFooter = location.pathname.includes("login") || location.pathname.includes("singUp");
+
     return (
         <div>
-            <Navbar></Navbar>
+            {noHeaderFooter || <Navbar></Navbar>}
+            <ScrollRestoration></ScrollRestoration>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {noHeaderFooter || <Footer></Footer>}
         </div>
     );
 };
