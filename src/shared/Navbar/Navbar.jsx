@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ActiveLink from '../../components/ActiveLink/ActiveLink';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import { FaCheck, FaLock, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 
 
 const Navbar = () => {
