@@ -30,7 +30,7 @@ const ExpertDoctors = () => {
             <SectionTitle title={"Our Expert Doctors"} subTitle={"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo."}></SectionTitle>
             <div className='my-24 grid grid-cols-1 md:grid-cols-3 gap-10'>
                 {
-                    doctors?.map(doctor => <div key={doctor._id} className='border-2 p-5 rounded-lg'>
+                    doctors.slice(0,3).map(doctor => <div key={doctor._id} className='border-2 p-5 rounded-lg'>
                         <div>
                             <img src={doctor.image} alt="" />
                             <h3 className='mt-4 font-semibold text-xl'>{doctor.name}</h3>
@@ -54,7 +54,7 @@ const ExpertDoctors = () => {
                                     <p>{doctor.price}</p>
                                 </div>
                             </div>
-                            <button className='w-full border border-[#F7A582] rounded-md py-3 font-semibold text-[#F7A582] text-xl hover:text-white hover:bg-[#F7A582] duration-500 '>View Profile</button>
+                            <button className='w-full border border-[#F7A582] rounded-md py-3 font-medium text-[#F7A582] text-xl hover:text-white hover:bg-[#F7A582] duration-500 '>View Profile</button>
                         </div>
                     </div>)
                 }
