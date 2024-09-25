@@ -12,7 +12,7 @@ const ClientSays = () => {
     const [testimonials, setTestimonials] = useState([]);
 
     useEffect(() => {
-        fetch("clientSays.json")
+        fetch("http://localhost:5000/client-says")
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, [])
