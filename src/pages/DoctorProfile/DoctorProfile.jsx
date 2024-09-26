@@ -5,6 +5,7 @@ import useDoctors from '../../hooks/useDoctors';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import { LuMapPin } from "react-icons/lu";
+import DoctorInfo from '../../components/DoctorInfo/DoctorInfo';
 
 const DoctorProfile = () => {
 
@@ -55,11 +56,13 @@ const DoctorProfile = () => {
                                 </div>)
                             }
                         </div>
-                        <div>
-
-                        </div>
                     </div>
                 </div>
+            </div>
+            <div className='bg-white rounded shadow-sm px-4 max-w-[1140px]  m-auto mb-24'>
+                {
+                    doctor && <DoctorInfo doctor={doctor}></DoctorInfo>
+                }
             </div>
         </div>
     );
