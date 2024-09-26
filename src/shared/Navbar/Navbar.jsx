@@ -34,7 +34,7 @@ const Navbar = () => {
         </li>
         <li><a>About</a></li>
         <li><a>Appointment</a></li>
-        <li><a>Reviews</a></li>
+        <li><a>Our Doctors</a></li>
         <li><a>Contact Us</a></li>
         {
             user ? <li className='flex flex-row '>
