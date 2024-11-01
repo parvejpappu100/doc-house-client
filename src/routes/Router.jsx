@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import SingUp from "../pages/SingUp/SingUp";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import DoctorProfile from "../pages/DoctorProfile/DoctorProfile";
+import Services from "../pages/Services/Services";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "doctor-profile/:id",
                 element: <DoctorProfile></DoctorProfile>
+            },
+            {
+                path: "services",
+                element: <Services></Services>
             }
         ]
     }

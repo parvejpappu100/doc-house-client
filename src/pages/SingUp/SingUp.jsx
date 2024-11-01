@@ -5,11 +5,13 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import log from "../../assets/images/log.png";
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 const SingUp = () => {
 
+    const [axiosSecure] = useAxiosSecure();
     const [checked, setChecked] = useState(false);
     const [passError, setPassError] = useState("");
     const [singUpError, setSingUpError] = useState("");
@@ -86,6 +88,19 @@ const SingUp = () => {
             // name, email, phone, city, country, message, postCode, address: userAddress
             .then(() => {
                 const savedUser = { name: name, email: user.email, image: photoUrl, role: "user" };
+                axiosSecure.post("/users", savedUser)
+                    .then(data => {
+                        if (data.data.insertedId) {
+                            navigate(from, { replace: true });
+                            Swal.fire({
+                                position: 'top',
+                                icon: 'success',
+                                title: 'User Create Successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
 
             })
             .catch(error => {

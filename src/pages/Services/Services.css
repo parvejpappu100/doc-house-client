@@ -1,0 +1,20 @@
+.custom-calendar {
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.custom-calendar .react-calendar__tile--active {
+    background-color: #4a90e2 !important;
+    color: white !important;
+    border-radius: 6px;
+}
+
+.custom-calendar .react-calendar__tile--now {
+    background-color: #e2eafc;
+    color: #4a90e2;
+}
+
+.custom-calendar .react-calendar__month-view__days__day--weekend {
+    color: #d9534f;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const SocialLogin = () => {
 
@@ -14,8 +15,20 @@ const SocialLogin = () => {
         googleSingIn()
             .then(result => {
                 const user = result.user;
-                // name, email, phone, city, country, message, postCode, address: userAddress
                 const savedUser = { name: user.displayName, email: user.email, image: user.photoURL, role: "user" };
+                axiosSecure.post("/users", savedUser)
+                    .then(data => {
+                        if (data.data.insertedId) {
+                            navigate(from, { replace: true });
+                            Swal.fire({
+                                position: 'top',
+                                icon: 'success',
+                                title: 'User Create Successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                        }
+                    })
                 navigate(from, { replace: true })
             })
             .catch(error => {
