@@ -9,6 +9,7 @@ import DoctorProfile from "../pages/DoctorProfile/DoctorProfile";
 import Services from "../pages/Services/Services";
 import Dashboard from "../layouts/Dashboard";
 import AllUsers from "../pages/DashboardRoute/Admin/AllUsers/AllUsers";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
             }
         ],
     },
-     // * Dashboard:
-       {
+    // * Dashboard:
+    {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
         errorElement: <ErrorPage></ErrorPage>,
@@ -47,10 +48,10 @@ const router = createBrowserRouter([
             // * Admin Routes:
             {
                 path: "allUsers",
-                element: <AllUsers></AllUsers>
+                element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
             }
         ]
-       }
+    }
 ]);
 
 
