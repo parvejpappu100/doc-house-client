@@ -3,8 +3,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const SocialLogin = () => {
+
+    const [axiosSecure] = useAxiosSecure();
 
     const { googleSingIn } = useAuth();
     const navigate = useNavigate();

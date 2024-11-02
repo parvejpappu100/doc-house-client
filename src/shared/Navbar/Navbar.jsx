@@ -37,7 +37,7 @@ const Navbar = () => {
             <ActiveLink to={"/services"}>Services</ActiveLink>
         </li>
         <li><a>Our Doctors</a></li>
-        <li><a>Contact Us</a></li>
+        <li><Link to={"/dashboard"}>Contact Us</Link></li>
         {
             user ? <li className='flex flex-row  '>
                 <Link onClick={handleLogout}>Logout</Link>
