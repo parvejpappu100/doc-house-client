@@ -3,7 +3,7 @@ import blackLogo from "../../assets/images/icons/black.png";
 
 const Footer = () => {
     return (
-        <div className='bg-base-300'>
+        <div className='bg-[#F3F3F3]'>
             <div className='max-w-[1140px] mx-auto px-4 py-20 lg:py-32'>
                 <footer className="footer text-black">
                     <aside>

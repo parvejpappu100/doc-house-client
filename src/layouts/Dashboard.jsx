@@ -18,7 +18,7 @@ const Dashboard = () => {
                     </div>
                     <div className="indicator">
                         <span className="indicator-item badge badge-secondary">99+</span>
-                        <button className="btn"><RiNotification2Fill></RiNotification2Fill></button>
+                        <button className="btn text-white"><RiNotification2Fill></RiNotification2Fill></button>
                     </div>
                 </div>
             </div>
